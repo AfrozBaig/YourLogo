@@ -18,21 +18,21 @@ class LoginTest(unittest.TestCase):
     def test_login(self):
         driver = self.driver
         driver.get("http://automationpractice.com/")
-        login = LoginPage(driver)
 
+        login = LoginPage(driver)
         login.click_sign_in_link()
         login.enter_email("test@123z.com")
         login.enter_password("12345")
         login.click_sign_in()
         time.sleep(3)
 
-        home = HomePage(driver)
-        home.click_sign_out()
-
     @classmethod
     def tearDownClass(cls) -> None:
+        home = HomePage(cls.driver)
+        home.click_sign_out()
         cls.driver.quit()
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
+        output='C:/Users/Karan Singh Bais/PycharmProjects/YourLogo/Reports/ExecutionReport.html'))
