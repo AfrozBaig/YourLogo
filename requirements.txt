@@ -1,7 +1,7 @@
 HtmlTestRunner
 selenium
 colorama==0.4.3
-py==1.8.1
+py==1.10.0
 pytest==5.3.3
 pytest-xdist==1.31.0
 pytest-rerunfailures==8.0
